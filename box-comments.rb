@@ -3,19 +3,28 @@
 
 #Loads Ruby client library for the Box V2 Content API.
 require 'boxr'
+
+searchQuery = "*.jpg" #replace with search query
+scope = ["user_content"]
+fileExtension = ["jpg"] #replace with file type needed
+ownerUser = ["12637368"]
+ancestorFolder = ["5587740729"]
+fileType = ["file"]
+fieldId = ["id"]
+
 #Creates a Boxr client with the use a Box Developer Token (generated from Box app's General Information page)
 #The Box developer Token is valid for 60 minutes
-client = Boxr::Client.new('xtLp2yenDXMAfZo063jyFuoXnBnpNq0w')
+client = Boxr::Client.new('3r0cHUgjxLVvZEFCp1LQbhFOpsBWeKF6')
 
-## This section will have the initial search of the content of the folder, which is a process
-## that currently runs in bash and exports all file_id of the images in a csv file.
+## This section performs the initial search of the content of the ancestor folder in Box
 ## The final code won't need to export the file_id but instead will wrap everything in a single loop
-##
-## Searches all items in a folder and all its sub-folders
-##items = client.search('')
-##items.each do |item|
-##    p "{item.id}"
-##end
+results = client.search(query= searchQuery, scope: scope, file_extensions: fileExtension,
+        owner_user_ids: ownerUser, ancestor_folder_ids: ancestorFolder, type: fileType,
+        offset: 0, limit: 200)
+
+results.each do |result|
+  p resultFile = result.id
+end
 
 #Names the text file as ID.csv
 file="ID.csv"
