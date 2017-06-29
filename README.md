@@ -24,7 +24,7 @@ The second step is to run from the command line or from Postman (Chrome extensio
 
 curl https://api.box.com/oauth2/token -d 'grant_type=authorization_code&code=YOUR_AUTHORIZATION_CODE&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET' -X POST
 
-Please remember to replace the three codes: YOUR_AUTHORIZATION_CODE, YOUR_CLIENT_ID and YOUR_CLIENT_SECRET.
+Please remember to replace these values: YOUR_AUTHORIZATION_CODE, YOUR_CLIENT_ID and YOUR_CLIENT_SECRET.
 
 YOUR_AUTHORIZATION_CODE: This one comes from the previous step.
 
