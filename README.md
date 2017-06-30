@@ -13,17 +13,21 @@ For executions that would usually take less than 1 hour, the use of the develope
 ## Steps to gain OAUTH 2.0 authentication
 
 First, access to the following URL from your website: 
-'''
+
+```
 https://account.box.com/api/oauth2/authorize?response_type=code&client_id=YOUR_CLIENT_ID&state=authenticated
-'''
+```
+
 Please remember to replace YOUR_CLIENT_ID with the client ID ooof your Box account.
 
 You will need to authenticate to your Box account and then the URL will show an authorization code. You have 30 seconds to copy this code and then paste it in the next step.
 
 The second step is to run from the command line or from Postman (Chrome extension) the following cURL command:
-'''
+
+```
 curl https://api.box.com/oauth2/token -d 'grant_type=authorization_code&code=YOUR_AUTHORIZATION_CODE&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET' -X POST
-'''
+```
+
 Please remember to replace these values: YOUR_AUTHORIZATION_CODE, YOUR_CLIENT_ID and YOUR_CLIENT_SECRET.
 
 **YOUR_AUTHORIZATION_CODE:** This one comes from the previous step.
