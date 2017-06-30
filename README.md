@@ -30,11 +30,11 @@ curl https://api.box.com/oauth2/token -d 'grant_type=authorization_code&code=YOU
 
 Please remember to replace these values: YOUR_AUTHORIZATION_CODE, YOUR_CLIENT_ID and YOUR_CLIENT_SECRET.
 
-**YOUR_AUTHORIZATION_CODE:** This one comes from the previous step.
+**1. YOUR_AUTHORIZATION_CODE:** This one comes from the previous step.
 
-**YOUR_CLIENT_ID:** Available accessing https://developer.box.com, creating a new app and copying this value from the configuration tab.
+**2. YOUR_CLIENT_ID:** Available accessing https://developer.box.com, creating a new app and copying this value from the configuration tab.
 
-**YOUR_CLIENT_SECRET:** Available accessing https://developer.box.com, creating a new app and copying this value from the configuration tab.
+**3. YOUR_CLIENT_SECRET:** Available accessing https://developer.box.com, creating a new app and copying this value from the configuration tab.
 
 ## Additional information before using this program
 
