@@ -8,21 +8,21 @@ This program searches the content of a folder in Box.com (including all its sub-
 
 Requires Ruby 2.0.0 or higher.
 
-For executions that would usually take less than 1 hour, the use of the developer token is enough to authenticate to the Box acount, However, for longer executions it is require OAUTH 2.0.
+For executions that would usually take less than 1 hour, the use of the developer token is enough to authenticate with the Box account, However, for longer executions OAUTH 2.0 it is require.
 
 ## Steps to gain OAUTH 2.0 authentication
 
-First, access to the following URL from your website: 
+1. First, access the following URL from your browser: 
 
 ```
 https://account.box.com/api/oauth2/authorize?response_type=code&client_id=YOUR_CLIENT_ID&state=authenticated
 ```
 
-Please remember to replace YOUR_CLIENT_ID with the client ID ooof your Box account.
+Please remember to replace YOUR_CLIENT_ID with the client ID of your own Box account.
 
-You will need to authenticate to your Box account and then the URL will show an authorization code. You have 30 seconds to copy this code and then paste it in the next step.
+You will need to authenticate with your Box account and then the URL will show an authorization code. You have 30 seconds to use this code in the next step.
 
-The second step is to run from the command line or from Postman (Chrome extension) the following cURL command:
+2. The second step is to run -from the command line or from Postman (Chrome extension)- the following cURL command:
 
 ```
 curl https://api.box.com/oauth2/token -d 'grant_type=authorization_code&code=YOUR_AUTHORIZATION_CODE&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET' -X POST
@@ -36,18 +36,18 @@ Please remember to replace these values: YOUR_AUTHORIZATION_CODE, YOUR_CLIENT_ID
 
 **YOUR_CLIENT_SECRET:** Available accessing https://developer.box.com, creating a new app and copying this value from the configuration tab.
 
-## Additional information needed before executing this program
+## Additional information before using this program
 
-There are some initialization variables that you need to initialize with the right values. The code in this problem only includes sample values that you need to replace with real values from your Box account.
+There are some initialization variables that you need to set with the right values. This code only include sample values and you need to replace them with real values from your Box account.
 
-**1. totalRecords =** Total number of photos inside the ancestor folder in Box
+**1. totalRecords =** Total number of files in the ancestor folder in Box. You can use Postman to get this number
 
-**2. searchQuery =** Replace with search query
+**2. searchQuery =** Replace this value with the desired search query
 
-**3. fileExtension =** Replace this value with file type needed
+**3. fileExtension =** Replace this value with the file type needed
 
 **4. ownerUser =** Replace with the correct user ID
 
-**5. ancestorFolder =** Id of the ancestor folder from where the search will run
+**5. ancestorFolder =** Id of the ancestor folder from where the search will run (the query will include the content of all sub-folders.
 
 
